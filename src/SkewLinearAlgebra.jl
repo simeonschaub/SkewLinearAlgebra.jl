@@ -14,6 +14,7 @@ export
     SkewCholesky,
     SkewCholeskyNoPivot,
     JMatrix,
+    Youla,
     #functions
     isskewhermitian,
     isskewsymmetric,
@@ -24,7 +25,10 @@ export
     logabspfaffian,
     logabspfaffian!,
     skewchol,
-    skewchol!
+    skewchol!,
+    youla,
+    youla!,
+    youla_form
 
 include("skewhermitian.jl")
 include("tridiag.jl")
@@ -35,6 +39,7 @@ include("eigen.jl")
 include("exp.jl")
 include("cholesky.jl")
 include("pfaffian.jl")
+include("youla.jl")
 end
 
 
