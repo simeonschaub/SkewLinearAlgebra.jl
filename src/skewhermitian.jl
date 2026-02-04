@@ -116,7 +116,7 @@ isskewsymmetric(a::Number) = iszero(a)
 Transforms `A` in-place to its skew-Hermitian part `(A-A')/2`,
 and returns a [`SkewHermitian`](@ref) view.
 """
-function skewhermitian!(A::AbstractMatrix{T}) where {T<:Number}
+function skewhermitian!(A::M) where {T<:Number, M<:AbstractMatrix{T}}
     LA.require_one_based_indexing(A)
     n = LA.checksquare(A)
     two = T(2)
@@ -128,7 +128,7 @@ function skewhermitian!(A::AbstractMatrix{T}) where {T<:Number}
             A[j,i] = -a'
         end
     end
-    return SkewHermitian(A)
+    return SkewHermitian{T, M}(A)
 end
 LA.Tridiagonal(A::SkewHermitian) = Tridiagonal(A.data)
 

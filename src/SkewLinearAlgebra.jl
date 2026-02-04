@@ -14,6 +14,7 @@ export
     SkewCholesky,
     SkewCholeskyNoPivot,
     JMatrix,
+    SkewArnoldi,
     #functions
     isskewhermitian,
     isskewsymmetric,
@@ -24,7 +25,11 @@ export
     logabspfaffian,
     logabspfaffian!,
     skewchol,
-    skewchol!
+    skewchol!,
+    skew_arnoldi,
+    skew_arnoldi!,
+    skew_arnoldi_reorthog!,
+    skew_lanczos!
 
 include("skewhermitian.jl")
 include("tridiag.jl")
@@ -35,6 +40,7 @@ include("eigen.jl")
 include("exp.jl")
 include("cholesky.jl")
 include("pfaffian.jl")
+include("arnoldi.jl")
 end
 
 
